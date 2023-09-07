@@ -2,6 +2,8 @@
 
 ## VMAgent
 
+Community URL: https://community.chocolatey.org/packages/vmagent
+
 ### Installation
 
 You can specify all parameters of `vmagent` during the install process via chocolatey.

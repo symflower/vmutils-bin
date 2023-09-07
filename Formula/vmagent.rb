@@ -20,7 +20,7 @@ class Vmagent < Formula
 		`vmagent_brew_services` and uses the flags in:
 		  #{etc}/vmagent/service.args
 
-		A default `scrape-config` can be found at #{etc}"/vmagent/scrape.yml"
+		A default `scrape-config` can be found at #{etc}/vmagent/scrape.yml
 	  EOS
 	end
 
