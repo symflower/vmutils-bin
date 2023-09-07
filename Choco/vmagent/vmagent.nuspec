@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <authors>VictoriaMetrics</authors>
+    <bugTrackerUrl>https://github.com/VictoriaMetrics/VictoriaMetrics/issues</bugTrackerUrl>
+    <description>
+      VMAgent is a tiny agent which helps you collect metrics from various sources, relabel and filter the collected metrics and store them in VictoriaMetrics or any other storage systems via Prometheus remote_write protocol.
+
+      This package uses "winsw" to wrap the agent inside a windows service.
+    </description>
+    <docsUrl>https://docs.victoriametrics.com/vmagent.html</docsUrl>
+    <iconUrl>https://avatars.githubusercontent.com/u/43720803</iconUrl>
+    <id>vmagent</id>
+    <licenseUrl>https://github.com/VictoriaMetrics/VictoriaMetrics/blob/master/LICENSE</licenseUrl>
+    <owners>Symflower.com</owners>
+    <packageSourceUrl>https://github.com/symflower/vmutils-bin</packageSourceUrl>
+    <projectSourceUrl>https://github.com/VictoriaMetrics/VictoriaMetrics/</projectSourceUrl>
+    <projectUrl>https://github.com/VictoriaMetrics/VictoriaMetrics</projectUrl>
+    <releaseNotes>https://github.com/VictoriaMetrics/VictoriaMetrics/releases</releaseNotes>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <summary>VMAgent is a tiny agent which helps you collect metrics from various sources, relabel and filter the collected metrics and store them in VictoriaMetrics or any other storage systems via Prometheus remote_write protocol.</summary>
+    <tags>vmagent victoriametrics agent</tags>
+    <title>Victoria Metrics Agent</title>
+    <version>1.93.3</version>
+  </metadata>
+</package>

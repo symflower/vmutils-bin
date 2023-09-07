@@ -1,0 +1,28 @@
+<service>
+	<id>vmagent</id>
+	<name>VMAgent</name>
+	<description>VMAgent service</description>
+	<executable>%BASE%\vmagent-windows-amd64-prod.exe"</executable>
+
+	<onfailure action="restart" delay="10 sec"/>
+	<onfailure action="restart" delay="20 sec"/>
+
+	<resetfailure>1 hour</resetfailure>
+
+	<arguments></arguments>
+
+	<priority>Normal</priority>
+
+	<stoptimeout>15 sec</stoptimeout>
+
+	<stopparentprocessfirst>true</stopparentprocessfirst>
+	<startmode>Automatic</startmode>
+	<waithint>15 sec</waithint>
+	<sleeptime>1 sec</sleeptime>
+
+	<logpath>%BASE%\..\..\..\logs\vmagent</logpath>
+	<log mode="roll">
+		<sizeThreshold>10240</sizeThreshold>
+		<keepFiles>8</keepFiles>
+	</log>
+</service>
