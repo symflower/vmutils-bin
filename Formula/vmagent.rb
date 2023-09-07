@@ -5,11 +5,11 @@ class Vmagent < Formula
 	version "1.93.3"
 
 	on_macos do
-	  url "https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/v1.93.3/vmutils-darwin-amd64-v#{version}.tar.gz"
+	  url "https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/v#{version}/vmutils-darwin-amd64-v#{version}.tar.gz"
 	  sha256 "fcf180f948ef54cecc65fcc5a2bc7371fb2b27d2ddc848ab377a55fbb66554b7"
 
 	  on_arm do
-		url "https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/v1.93.3/vmutils-darwin-arm64-v#{version}.tar.gz"
+		url "https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/v#{version}/vmutils-darwin-arm64-v#{version}.tar.gz"
 		sha256 "1961ac5476240b434eccccf09f17700495e619b2a0db37735be2c06514a7c79d"
 	  end
 	end
