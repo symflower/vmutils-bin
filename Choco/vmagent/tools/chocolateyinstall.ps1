@@ -4,7 +4,7 @@
 $packageName = $env:ChocolateyPackageName
 $toolsDir    = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-$vmversion = "1.93.3"
+$vmversion = "1.93.4"
 $swversion = "3.0.0-alpha.11"
 
 
