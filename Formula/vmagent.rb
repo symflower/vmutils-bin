@@ -2,15 +2,15 @@ class Vmagent < Formula
 	desc "VMAgent is a tiny agent which helps you collect metrics from various sources, relabel and filter the collected metrics and store them in VictoriaMetrics or any other storage systems via Prometheus remote_write protocol."
 	homepage "https://docs.victoriametrics.com/vmagent.html"
 	license all_of: ["MIT", "Apache-2.0"]
-	version "1.93.3"
+	version "1.93.4"
 
 	on_macos do
-	  url "https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/v1.93.3/vmutils-darwin-amd64-v#{version}.tar.gz"
-	  sha256 "fcf180f948ef54cecc65fcc5a2bc7371fb2b27d2ddc848ab377a55fbb66554b7"
+	  url "https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/v#{version}/vmutils-darwin-amd64-v#{version}.tar.gz"
+	  sha256 "b42a69fc4b7fc36e299c8656c34eb518b97740b62b83bd0e79b228782ce9e9d2"
 
 	  on_arm do
-		url "https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/v1.93.3/vmutils-darwin-arm64-v#{version}.tar.gz"
-		sha256 "1961ac5476240b434eccccf09f17700495e619b2a0db37735be2c06514a7c79d"
+		url "https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/v#{version}/vmutils-darwin-arm64-v#{version}.tar.gz"
+		sha256 "5efde2ac9dffe66c1badd84755bc17ddf63ea4df71c384e2debad5dc6421c27b"
 	  end
 	end
 
@@ -20,7 +20,7 @@ class Vmagent < Formula
 		`vmagent_brew_services` and uses the flags in:
 		  #{etc}/vmagent/service.args
 
-		A default `scrape-config` can be found at #{etc}"/vmagent/scrape.yml"
+		A default `scrape-config` can be found at #{etc}/vmagent/scrape.yml
 	  EOS
 	end
 
