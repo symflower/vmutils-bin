@@ -4,11 +4,9 @@
 $packageName = $env:ChocolateyPackageName
 $toolsDir    = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-$vmversion = "1.93.4"
 $swversion = "3.0.0-alpha.11"
 
-
-$vmutilsURL = "https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/v${vmversion}/vmutils-windows-amd64-v${vmversion}.zip"
+$vmutilsURL = "https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/v${env:ChocolateyPackageVersion}/vmutils-windows-amd64-v${env:ChocolateyPackageVersion}.zip"
 $setupName  = 'vmagent-windows-amd64-prod.exe'
 $packageArgs = @{
   packageName    = $packageName
