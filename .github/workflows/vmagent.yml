@@ -1,7 +1,7 @@
 name: vmagent chocolatey packaging and publishing
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: # Allow to manually run the workflow.
   push:
     branches:
     - main
