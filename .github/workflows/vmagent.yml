@@ -1,6 +1,7 @@
 name: vmagent chocolatey packaging and publishing
 
 on:
+  workflow_dispatch:
   push:
     branches:
     - main
