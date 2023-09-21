@@ -1,6 +1,7 @@
 name: Update VM version
 
 on:
+  workflow_dispatch: # Allow to manually run the workflow.
   schedule:
     - cron:  '0 10 * * *'
 
