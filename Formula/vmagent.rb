@@ -6,11 +6,11 @@ class Vmagent < Formula
 
 	on_macos do
 	  url "https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/v#{version}/vmutils-darwin-amd64-v#{version}.tar.gz"
-	  sha256 "b42a69fc4b7fc36e299c8656c34eb518b97740b62b83bd0e79b228782ce9e9d2"
+	  sha256 "c1f659d11a26ba9f8e9c30d9c8ede731270af17fbcd2f15372d15be96c7ddd68"
 
 	  on_arm do
 		url "https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/v#{version}/vmutils-darwin-arm64-v#{version}.tar.gz"
-		sha256 "5efde2ac9dffe66c1badd84755bc17ddf63ea4df71c384e2debad5dc6421c27b"
+		sha256 "bad19df593d70062eb5cfb28e691166faf18885f61441c81a522dd57d17b3741"
 	  end
 	end
 
