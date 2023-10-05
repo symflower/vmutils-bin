@@ -2,15 +2,15 @@ class Vmagent < Formula
 	desc "VMAgent is a tiny agent which helps you collect metrics from various sources, relabel and filter the collected metrics and store them in VictoriaMetrics or any other storage systems via Prometheus remote_write protocol."
 	homepage "https://docs.victoriametrics.com/vmagent.html"
 	license all_of: ["MIT", "Apache-2.0"]
-	version "1.93.5"
+	version "1.94.0"
 
 	on_macos do
 	  url "https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/v#{version}/vmutils-darwin-amd64-v#{version}.tar.gz"
-	  sha256 "c1f659d11a26ba9f8e9c30d9c8ede731270af17fbcd2f15372d15be96c7ddd68"
+	  sha256 "052958ac0d7f163af42ba9499941bd3acd6bdc90214bdd07e7b9d0b8ff53a25c"
 
 	  on_arm do
 		url "https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/v#{version}/vmutils-darwin-arm64-v#{version}.tar.gz"
-		sha256 "bad19df593d70062eb5cfb28e691166faf18885f61441c81a522dd57d17b3741"
+		sha256 "84356ee903d1faeddf5ed84007c68ed2d538c57196afdb8ff01bd02463fdc48f"
 	  end
 	end
 
