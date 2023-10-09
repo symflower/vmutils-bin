@@ -32,14 +32,16 @@ class Vmagent < Formula
 		exec #{bin}/vmagent $(<#{etc}/vmagent/service.args)
 	  EOS
 
-	  (etc/"vmagent/scrape.yml").write <<~EOS
-		global:
-		  scrape_interval: 10s
-		scrape_configs:
-		  - job_name: "vmagent"
-			static_configs:
-			- targets: ["127.0.0.1:8429"]
-	  EOS
+	  unless File.exists?(etc/"vmagent/scrape.yml")
+		(etc/"vmagent/scrape.yml").write <<~EOS
+			global:
+			scrape_interval: 10s
+			scrape_configs:
+			- job_name: "vmagent"
+				static_configs:
+				- targets: ["127.0.0.1:8429"]
+		EOS
+	  end
 	end
 
 	service do
