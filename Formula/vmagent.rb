@@ -6,14 +6,14 @@ class Vmagent < Formula
 
 	on_macos do
 		on_intel do
-			checksumAmd64 = "05bb884f03fa1164fdee87b1bafdc84da57d0063a6b280c3fbac36fff8c0b2ed" // The wording of this variable is intentional for easier automation.
+			checksumAmd64 = "05bb884f03fa1164fdee87b1bafdc84da57d0063a6b280c3fbac36fff8c0b2ed" # The wording of this variable is intentional for easier automation.
 
 			url "https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/v#{version}/vmutils-darwin-amd64-v#{version}.tar.gz"
 			sha256 "#{checksumAmd64}"
 		end
 
 		on_arm do
-			checksumArm64 = "121052826e4c80108ba17670393efbd4a32326f8c78b4664898810eaadf6e99d" // The wording of this variable is intentional for easier automation.
+			checksumArm64 = "121052826e4c80108ba17670393efbd4a32326f8c78b4664898810eaadf6e99d" # The wording of this variable is intentional for easier automation.
 
 			url "https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/v#{version}/vmutils-darwin-arm64-v#{version}.tar.gz"
 			sha256 "#{checksumArm64}"
