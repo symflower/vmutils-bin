@@ -8,11 +8,11 @@ class Vmagent < Formula
 
 	on_macos do
 	  url "https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/v#{version}/vmutils-darwin-amd64-v#{version}.tar.gz"
-	  sha256 checksumAmd64
+	  sha256 "#{checksumAmd64}"
 
 	  on_arm do
 		url "https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/v#{version}/vmutils-darwin-arm64-v#{version}.tar.gz"
-		sha256 checksumArm64
+		sha256 "#{checksumArm64}"
 	  end
 	end
 
