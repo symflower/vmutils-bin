@@ -1,0 +1,57 @@
+name: Packaging and Release
+
+on:
+  workflow_dispatch: # Allow to manually run the workflow.
+  push:
+    branches:
+    - main
+
+jobs:
+  choco-building:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Choco packaging
+        uses: crazy-max/ghaction-chocolatey@v3
+        with:
+          args: pack Choco\vmagent\vmagent.nuspec
+      - uses: actions/upload-artifact@v3
+        with:
+          name: vmagent.nupkg
+          path: vmagent.*.nupkg
+
+  choco-publishing:
+    needs: choco-building
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - uses: actions/download-artifact@v3
+        with:
+          name: vmagent.nupkg
+      - name: Choco push
+        uses: crazy-max/ghaction-chocolatey@v3
+        with:
+          args: push --source https://push.chocolatey.org/ -k ${{ secrets.CHOCO_API_KEY }}
+
+  release:
+    needs: choco-building
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - uses: actions/download-artifact@v3
+        with:
+          name: vmagent.nupkg
+      - name: Set version
+        run: |
+          echo "VM_VERSION=$(cat VERSION)" >> $GITHUB_ENV
+      - name: Rename choco package for release
+        run: |
+          mv vmagent.*.nupkg vmagent.nupkg
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ env.VM_VERSION }}
+          files: vmagent.nupkg
