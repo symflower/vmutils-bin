@@ -20,6 +20,7 @@ choco install vmagent --params "'/httpListenAddr::8429 /memory.allowedPercent:40
 	```bash
 	choco install vmagent --version $VERSION --source $SOURCE --params "'/httpListenAddr::8429 /memory.allowedPercent:40 /promscrape.config:C:/Users/Administrator/Documents/vmagent-scrape-config.yml'"
 	```
+| See more usable flags for vmagent at https://docs.victoriametrics.com/vmagent.html#advanced-usage
 
 ### Usage
 
