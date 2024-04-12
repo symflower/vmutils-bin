@@ -21,13 +21,16 @@ jobs:
         if: steps.version.outputs.next_release != steps.version.outputs.current_release
         run: |
           echo ${{ steps.version.outputs.next_release }} > VERSION
-          sed -i "s/${{ steps.version.outputs.current_release }}/${{ steps.version.outputs.next_release }}/g" ./Formula/vmagent.rb
-          sed -i "s/${{ steps.version.outputs.current_release }}/${{ steps.version.outputs.next_release }}/g" ./Choco/vmagent/vmagent.nuspec
 
+          sed -i "s/${{ steps.version.outputs.current_release }}/${{ steps.version.outputs.next_release }}/g" ./Formula/vmagent.rb
           darwinAmd64Checksum=$(curl -sL https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/v${{ steps.version.outputs.next_release }}/vmutils-darwin-amd64-v${{ steps.version.outputs.next_release }}_checksums.txt | grep "vmutils-darwin" | awk '{ print $1 }')
           darwinArm64Checksum=$(curl -sL https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/v${{ steps.version.outputs.next_release }}/vmutils-darwin-arm64-v${{ steps.version.outputs.next_release }}_checksums.txt | grep "vmutils-darwin" | awk '{ print $1 }')
           sed -i "s/checksumAmd64 .*\"/checksumAmd64 = \"$darwinAmd64Checksum\"/g" ./Formula/vmagent.rb
           sed -i "s/checksumArm64 .*\"/checksumArm64 = \"$darwinArm64Checksum\"/g" ./Formula/vmagent.rb
+
+          sed -i "s/${{ steps.version.outputs.current_release }}/${{ steps.version.outputs.next_release }}/g" ./Choco/vmagent/vmagent.nuspec
+          windowsChecksum=$(curl -sL https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/v${{ steps.version.outputs.next_release }}/vmutils-windows-amd64-v${{ steps.version.outputs.next_release }}_checksums.txt | grep "vmutils-windows" | awk '{ print $1 }')
+          sed -i "s/vmutilsChecksum .*\"/vmutilsChecksum = \"$windowsChecksum\"/g" ./Choco/vmagent/tools/chocolateyinstall.ps1
       - name: Create pull request
         uses: peter-evans/create-pull-request@v5
         with:
