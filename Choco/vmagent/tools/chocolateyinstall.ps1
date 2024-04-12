@@ -6,6 +6,7 @@ $toolsDir    = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
 $swversion = "3.0.0-alpha.11"
 $vmutilsChecksum = "e9e26cdcb490290d104c2bfc25bd8093d14007e35609243471b06fb6a0ea8a26"
+$winswChecksum = "a2daa6a33a9c2b791ae31d9092e7935c339d1e03e89bfb747618ce2f4e819e20"
 
 $vmutilsURL = "https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/v${env:ChocolateyPackageVersion}/vmutils-windows-amd64-v${env:ChocolateyPackageVersion}.zip"
 $setupName  = 'vmagent-windows-amd64-prod.exe'
@@ -28,6 +29,8 @@ $winswXML  = 'vmagent.xml'
 $winswArgs = @{
   packageName  = $winswExe
   url          = $winswURL
+  checksum     = $winswChecksum
+  checksumTyp  = 'sha256'
   fileType     = 'EXE'
   fileFullPath = Join-Path -Path $toolsDir -ChildPath $winswExe
 }
