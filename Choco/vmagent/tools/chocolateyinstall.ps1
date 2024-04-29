@@ -17,7 +17,7 @@ $packageArgs = @{
   fileType       = 'EXE'
   url            = $vmutilsURL
   checksum       = $vmutilsChecksum
-  checksumTyp    = 'sha256'
+  checksumType   = 'sha256'
 
   silentArgs     = '/S'
   validExitCodes = @(0)
@@ -30,7 +30,7 @@ $winswArgs = @{
   packageName  = $winswExe
   url          = $winswURL
   checksum     = $winswChecksum
-  checksumTyp  = 'sha256'
+  checksumType = 'sha256'
   fileType     = 'EXE'
   fileFullPath = Join-Path -Path $toolsDir -ChildPath $winswExe
 }
