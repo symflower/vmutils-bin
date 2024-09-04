@@ -11,12 +11,12 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Choco packaging
         uses: crazy-max/ghaction-chocolatey@v3
         with:
           args: pack Choco\vmagent\vmagent.nuspec
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: vmagent.nupkg
           path: vmagent.*.nupkg
@@ -27,7 +27,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - uses: actions/download-artifact@v4.1.7
+      - uses: actions/download-artifact@v4
         with:
           name: vmagent.nupkg
       - name: Choco push
@@ -41,7 +41,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - uses: actions/download-artifact@v4.1.7
+      - uses: actions/download-artifact@v4
         with:
           name: vmagent.nupkg
       - name: Set version
@@ -51,7 +51,7 @@ jobs:
         run: |
           mv vmagent.*.nupkg vmagent.nupkg
       - name: Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ env.VM_VERSION }}
           files: vmagent.nupkg
