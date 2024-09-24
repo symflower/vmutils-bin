@@ -38,7 +38,7 @@ class Vmagent < Formula
 			exec #{bin}/vmagent $(<#{etc}/vmagent/service.args)
 		EOS
 
-		unless File.exists?(etc/"vmagent/scrape.yml")
+		unless File.exist?(etc/"vmagent/scrape.yml")
 			(etc/"vmagent/scrape.yml").write <<~EOS
 				global:
 				scrape_interval: 10s
