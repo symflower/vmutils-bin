@@ -5,7 +5,7 @@ $packageName = $env:ChocolateyPackageName
 $toolsDir    = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
 $swversion = "3.0.0-alpha.11"
-$vmutilsChecksum = "8b60d8179001924bfdac91cbc7e479cd6e5ea856d4e15c2c4022f30aa0040798"
+$vmutilsChecksum = "f9970226865cb3a599639ed41b3f6a34aa978b8712a601e9cdfa0f6c2bc2c0fb"
 $winswChecksum = "a2daa6a33a9c2b791ae31d9092e7935c339d1e03e89bfb747618ce2f4e819e20"
 
 $vmutilsURL = "https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/v${env:ChocolateyPackageVersion}/vmutils-windows-amd64-v${env:ChocolateyPackageVersion}.zip"
