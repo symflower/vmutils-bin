@@ -2,18 +2,18 @@ class Vmagent < Formula
 	desc "VMAgent is a tiny agent which helps you collect metrics from various sources, relabel and filter the collected metrics and store them in VictoriaMetrics or any other storage systems via Prometheus remote_write protocol."
 	homepage "https://docs.victoriametrics.com/vmagent.html"
 	license all_of: ["MIT", "Apache-2.0"]
-	version "1.144.0"
+	version "1.147.0"
 
 	on_macos do
 		on_intel do
-			checksumAmd64 = "fc631c3fb62c92491b7fe1a98baa0d5d3f546152741961961e6544ab78aa3c7f" # The wording of this variable is intentional for easier automation.
+			checksumAmd64 = "ec9aed148da71c346507138ac1f35fa3f0a9cef6797c02a42e9dc7b5ab14629a" # The wording of this variable is intentional for easier automation.
 
 			url "https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/v#{version}/vmutils-darwin-amd64-v#{version}.tar.gz"
 			sha256 "#{checksumAmd64}"
 		end
 
 		on_arm do
-			checksumArm64 = "a7d67f5e1d98266e6f7d5adcbe4397f43bc731a724497ceb8528a0cf42ad61c8" # The wording of this variable is intentional for easier automation.
+			checksumArm64 = "32dca771ff1830f98760aab86a92fdfcfb60e8b9588d908eb1ff0f5e90e0bcaf" # The wording of this variable is intentional for easier automation.
 
 			url "https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/v#{version}/vmutils-darwin-arm64-v#{version}.tar.gz"
 			sha256 "#{checksumArm64}"
